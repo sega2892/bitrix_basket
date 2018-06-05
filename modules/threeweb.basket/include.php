@@ -6,20 +6,14 @@
  * Time: 11:54
  */
 \Bitrix\Main\Loader::registerAutoLoadClasses(
-    "threeweb.telegramchat",
+    "threeweb.basket",
  array(
-    '\Threeweb\Telegramchat\ChatTable'=>'/lib/chat.php',
-     '\Threeweb\Telegramchat\ChatListTable'=>'/lib/chat_list.php',
-     '\Threeweb\Telegramchat\BotTable'=>'/lib/bot.php',
-     '\Threeweb\Telegramchat\ManagerTable'=>'/lib/manager.php',
-     '\Threeweb\Telegramchat\MessageTable'=>'/lib/message.php',
-	 
-	 'telegramChat'=>'classes/mysql/chat.php',
-	 'telegramBot'=>'classes/mysql/bot.php',
-	 'telegramManager'=>'classes/mysql/manager.php',
-	 'telegramMsg'=>'classes/mysql/message.php',
-	 'telegramChatList'=>'classes/mysql/chat_list.php',
-	 
+    '\Threeweb\basket\OrderTable'=>'/lib/order.php',
+     '\Threeweb\basket\PriсeTable'=>'/lib/priсe.php',
+     '\Threeweb\basket\TypePriсeTable'=>'/lib/type_priсe.php',
+	 'order'=>'classes/mysql/order.php',
+	 'prise'=>'classes/mysql/prise.php',
+	 'type_prise'=>'classes/mysql/type_prise.php',
  )
  );
  

@@ -76,46 +76,29 @@ Class threeweb_basket extends CModule
     {
         Loader::includeModule($this->MODULE_ID);
 
-        if(!Application::getConnection(\Threeweb\Telegramchat\ChatTable::getConnectionName())->isTableExists(
-            Base::getInstance('\Threeweb\Telegramchat\ChatTable')->getDBTableName()
+        if(!Application::getConnection(\Threeweb\basket\OrderTable::getConnectionName())->isTableExists(
+            Base::getInstance('\Threeweb\basket\OrderTable')->getDBTableName()
         )
         )
         {
-            Base::getInstance('\Threeweb\Telegramchat\ChatTable')->createDbTable();
+            Base::getInstance('\Threeweb\basket\OrderTable')->createDbTable();
         }
 
-        if(!Application::getConnection(\Threeweb\Telegramchat\ChatListTable::getConnectionName())->isTableExists(
-            Base::getInstance('\Threeweb\Telegramchat\ChatListTable')->getDBTableName()
+        if(!Application::getConnection(\Threeweb\basket\PriсeTable::getConnectionName())->isTableExists(
+            Base::getInstance('\Threeweb\basket\PriсeTable')->getDBTableName()
         )
         )
         {
-            Base::getInstance('\Threeweb\Telegramchat\ChatListTable')->createDbTable();
+            Base::getInstance('\Threeweb\basket\PriсeTable')->createDbTable();
         }
 
-        if(!Application::getConnection(\Threeweb\Telegramchat\BotTable::getConnectionName())->isTableExists(
-            Base::getInstance('\Threeweb\Telegramchat\BotTable')->getDBTableName()
+        if(!Application::getConnection(\Threeweb\basket\TypePriсeTable::getConnectionName())->isTableExists(
+            Base::getInstance('\basket\Telegramchat\TypePriсeTable')->getDBTableName()
         )
         )
         {
-            Base::getInstance('\Threeweb\Telegramchat\BotTable')->createDbTable();
+            Base::getInstance('\basket\Telegramchat\TypePriсeTable')->createDbTable();
         }
-
-        if(!Application::getConnection(\Threeweb\Telegramchat\ManagerTable::getConnectionName())->isTableExists(
-            Base::getInstance('\Threeweb\Telegramchat\ManagerTable')->getDBTableName()
-        )
-        )
-        {
-            Base::getInstance('\Threeweb\Telegramchat\ManagerTable')->createDbTable();
-        }
-
-        if(!Application::getConnection(\Threeweb\Telegramchat\MessageTable::getConnectionName())->isTableExists(
-            Base::getInstance('\Threeweb\Telegramchat\MessageTable')->getDBTableName()
-        )
-        )
-        {
-            Base::getInstance('\Threeweb\Telegramchat\MessageTable')->createDbTable();
-        }
-
 
     }
 
@@ -126,20 +109,14 @@ Class threeweb_basket extends CModule
     {
         Loader::includeModule($this->MODULE_ID);
 
-        Application::getConnection(\Threeweb\Telegramchat\ChatTable::getConnectionName())->
-        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\Telegramchat\ChatTable')->getDBTableName());
+        Application::getConnection(\Threeweb\basket\OrderTable::getConnectionName())->
+        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\basket\OrderTable')->getDBTableName());
 
-        Application::getConnection(\Threeweb\Telegramchat\ChatTable::getConnectionName())->
-        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\Telegramchat\ChatListTable')->getDBTableName());
+        Application::getConnection(\Threeweb\basket\PriseTable::getConnectionName())->
+        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\basket\PriсeTable')->getDBTableName());
 
-        Application::getConnection(\Threeweb\Telegramchat\BotTable::getConnectionName())->
-        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\Telegramchat\BotTable')->getDBTableName());
-
-        Application::getConnection(\Threeweb\Telegramchat\ManagerTable::getConnectionName())->
-        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\Telegramchat\ManagerTable')->getDBTableName());
-
-        Application::getConnection(\Threeweb\Telegramchat\MessageTable::getConnectionName())->
-        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\Telegramchat\MessageTable')->getDBTableName());
+        Application::getConnection(\Threeweb\basket\TypePriseTable::getConnectionName())->
+        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\basket\TypePriсeTable')->getDBTableName());
 
         Option::delete($this->MODULE_ID);
     }
