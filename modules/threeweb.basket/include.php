@@ -8,12 +8,12 @@
 \Bitrix\Main\Loader::registerAutoLoadClasses(
     "threeweb.basket",
  array(
-    '\Threeweb\basket\OrderTable'=>'/lib/order.php',
-     '\Threeweb\basket\PriсeTable'=>'/lib/priсe.php',
-     '\Threeweb\basket\TypePriсeTable'=>'/lib/type_priсe.php',
+    '\Threeweb\Basket\OrderTable'=>'/lib/order.php',
+     '\Threeweb\Basket\PriceTable'=>'/lib/price.php',
+     '\Threeweb\Basket\TypePriceTable'=>'/lib/type.php',
 	 'order'=>'classes/mysql/order.php',
-	 'prise'=>'classes/mysql/prise.php',
-	 'type_prise'=>'classes/mysql/type_prise.php',
+	 'price'=>'classes/mysql/price.php',
+	 'type_price'=>'classes/mysql/type_price.php',
  )
  );
  

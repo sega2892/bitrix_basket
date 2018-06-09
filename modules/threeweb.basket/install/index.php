@@ -76,28 +76,28 @@ Class threeweb_basket extends CModule
     {
         Loader::includeModule($this->MODULE_ID);
 
-        if(!Application::getConnection(\Threeweb\basket\OrderTable::getConnectionName())->isTableExists(
-            Base::getInstance('\Threeweb\basket\OrderTable')->getDBTableName()
+       if(!Application::getConnection(\Threeweb\basket\OrderTable::getConnectionName())->isTableExists(
+            Base::getInstance('\Threeweb\Basket\OrderTable')->getDBTableName()
         )
         )
         {
-            Base::getInstance('\Threeweb\basket\OrderTable')->createDbTable();
+            Base::getInstance('\Threeweb\Basket\OrderTable')->createDbTable();
         }
 
-        if(!Application::getConnection(\Threeweb\basket\PriсeTable::getConnectionName())->isTableExists(
-            Base::getInstance('\Threeweb\basket\PriсeTable')->getDBTableName()
+        if(!Application::getConnection(\Threeweb\Basket\PriceTable::getConnectionName())->isTableExists(
+            Base::getInstance('\Threeweb\Basket\PriceTable')->getDBTableName()
         )
         )
         {
-            Base::getInstance('\Threeweb\basket\PriсeTable')->createDbTable();
+            Base::getInstance('\Threeweb\Basket\PriceTable')->createDbTable();
         }
 
-        if(!Application::getConnection(\Threeweb\basket\TypePriсeTable::getConnectionName())->isTableExists(
-            Base::getInstance('\basket\Telegramchat\TypePriсeTable')->getDBTableName()
+        if(!Application::getConnection(\Threeweb\Basket\TypePriceTable::getConnectionName())->isTableExists(
+            Base::getInstance('\Threeweb\Basket\TypePriceTable')->getDBTableName()
         )
         )
         {
-            Base::getInstance('\basket\Telegramchat\TypePriсeTable')->createDbTable();
+            Base::getInstance('\Threeweb\Basket\TypePriceTable')->createDbTable();
         }
 
     }
@@ -109,14 +109,14 @@ Class threeweb_basket extends CModule
     {
         Loader::includeModule($this->MODULE_ID);
 
-        Application::getConnection(\Threeweb\basket\OrderTable::getConnectionName())->
-        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\basket\OrderTable')->getDBTableName());
+        Application::getConnection(\Threeweb\Basket\OrderTable::getConnectionName())->
+        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\Basket\OrderTable')->getDBTableName());
 
-        Application::getConnection(\Threeweb\basket\PriseTable::getConnectionName())->
-        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\basket\PriсeTable')->getDBTableName());
+        Application::getConnection(\Threeweb\Basket\PriceTable::getConnectionName())->
+        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\Basket\PriceTable')->getDBTableName());
 
-        Application::getConnection(\Threeweb\basket\TypePriseTable::getConnectionName())->
-        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\basket\TypePriсeTable')->getDBTableName());
+        Application::getConnection(\Threeweb\Basket\TypePriceTable::getConnectionName())->
+        queryExecute('drop table if exists '.Base::getInstance('\Threeweb\Basket\TypePriceTable')->getDBTableName());
 
         Option::delete($this->MODULE_ID);
     }
